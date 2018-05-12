@@ -1,0 +1,16 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /girl2
+
+#自定义属性
+cupSize: B
+age: 18
+
+#属性可以自由组装，将上面的两个属性组装成新的属性[配置中使用当前配置]
+content: "cupSize: ${cupSize}, age: ${age}"
+
+#上面的方式，是单独定义，属性非常多时不是很方便，我们可以采用下面的分组的方式 [推荐的方式]
+girl:
+  cupSize: D
+  age: 19

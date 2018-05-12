@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    #注意jdbc连接的参数意义
+    url: jdbc:mysql://127.0.0.1:3306/dbgirl?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      #create每次都重新创建，update第一次创建，再次启动有数据不处理，create-drop应用停掉删除数据，none什么也不做，validate每次都校验db与entity映射是否正确
+      ddl-auto: update
+    show-sql: true
+    #后台日志显示sql语句
+
+server:
+  port: 8082
+  servlet:
+    context-path: /girl2
+
+#自定义属性
+cupSize: B
+age: 18
+
+#属性可以自由组装，将上面的两个属性组装成新的属性[配置中使用当前配置]
+content: "cupSize: ${cupSize}, age: ${age}"
+
+#上面的方式，是单独定义，属性非常多时不是很方便，我们可以采用下面的分组的方式 [推荐的方式]
+girl:
+  cupSize: D
+  age: 19

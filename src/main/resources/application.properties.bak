@@ -1,0 +1,2 @@
+server.port=8081          // 修改tomcat启动的端口号
+server.servlet.context-path=/girl    // 修改应用上下文地址(默认为空)
