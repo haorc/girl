@@ -10,6 +10,9 @@ import java.util.List;
 
 /**
  * Created by haorc ON 2018/5/12
+ * 1、获取请求参数的注解
+ * 2、获取请求路径中参数的注解
+ * 3、@RequestMapping的GET、PUT等简写注解
  */
 @RestController
 public class GirlController {
@@ -22,7 +25,7 @@ public class GirlController {
 
     /**
      * 获取所有的女生信息
-     * @return
+     * @return 返回所有的girl信息
      */
     @GetMapping(value = "/girls")
     public List<Girl> getGirls() {
